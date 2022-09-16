@@ -6,6 +6,7 @@ using AutoMapper;
 using HotelListing.API.Contracts;
 using HotelListing.API.Exceptiions;
 using HotelListing.API.Models;
+using Microsoft.AspNetCore.OData.Query;
 
 namespace HotelListing.API.Controllers
 {
@@ -24,6 +25,7 @@ namespace HotelListing.API.Controllers
 
         // GET: api/Countries
         [HttpGet("GetAll")]
+        [EnableQuery]
         public async Task<ActionResult<IEnumerable<GetCountryDto>>> GetCountries()
         {
             var countries = await _countriesRepository.GetAllAsync();
