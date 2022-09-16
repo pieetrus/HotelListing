@@ -10,12 +10,12 @@ using HotelListing.API.Models.Country;
 using AutoMapper;
 using HotelListing.API.Contracts;
 using Microsoft.AspNetCore.Authorization;
+using HotelListing.API.Exceptiions;
 
 namespace HotelListing.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class CountriesController : ControllerBase
     {
         private readonly IMapper _mapper;
@@ -40,11 +40,11 @@ namespace HotelListing.API.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<CountryDto>> GetCountry(int id)
         {
-            var country = _countriesRepository.GetDetails(id);
+            var country = await _countriesRepository.GetDetails(id);
 
             if (country == null)
             {
-                return NotFound();
+                throw new NotFoundException(nameof(GetCountries), id);
             }
 
             var countryDto = _mapper.Map<CountryDto>(country);

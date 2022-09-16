@@ -19,10 +19,10 @@ namespace HotelListing.API.Controllers
         private readonly IHotelsRepository _hotelRepository;
         private readonly IMapper _mapper;
 
-        public HotelsController(IHotelsRepository hotelRepository, IMapper _mapper)
+        public HotelsController(IHotelsRepository hotelRepository, IMapper mapper)
         {
             _hotelRepository = hotelRepository;
-            _mapper = _mapper;
+            _mapper = mapper;
         }
 
         // GET: api/Hotels
