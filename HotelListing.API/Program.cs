@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.Net.Http.Headers;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -55,6 +56,12 @@ builder.Services.AddVersionedApiExplorer(
         options.SubstituteApiVersionInUrl = true;
     });
 
+builder.Services.AddResponseCaching(options =>
+{
+    options.MaximumBodySize = 1024;
+    options.UseCaseSensitivePaths = true;
+});
+
 builder.Host.UseSerilog((ctx, lc) => lc.WriteTo.Console().ReadFrom.Configuration(ctx.Configuration));
 
 builder.Services.AddAutoMapper(typeof(MapperConfig));
@@ -97,6 +104,23 @@ app.UseMiddleware<ExceptionMiddleware>();
 app.UseHttpsRedirection();
 
 app.UseCors("AllowAll");
+
+app.UseResponseCaching();
+
+app.Use(async (context, next) =>
+{
+    context.Response.GetTypedHeaders().CacheControl =
+    new CacheControlHeaderValue()
+    {
+        Public = true,
+        MaxAge = TimeSpan.FromSeconds(10)
+    };
+    context.Response.Headers[HeaderNames.Vary] = new string[] { "Accept-Encoding" };
+
+    await next();
+});
+
+
 app.UseAuthentication();
 app.UseAuthorization();
 
