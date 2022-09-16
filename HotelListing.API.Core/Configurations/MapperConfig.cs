@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using HotelListing.API.CoreData;
 using HotelListing.API.CoreModels.Country;
 using HotelListing.API.CoreModels.Hotel;
 using HotelListing.API.CoreModels.Users;
+using HotelListing.API.Data;
 
 namespace HotelListing.API.CoreConfigurations
 {

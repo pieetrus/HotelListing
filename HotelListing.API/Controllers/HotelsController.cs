@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using HotelListing.API.Data;
-using HotelListing.API.Contracts;
 using AutoMapper;
-using HotelListing.API.Models.Hotel;
+using HotelListing.API.CoreContracts;
+using HotelListing.API.CoreModels.Hotel;
 
 namespace HotelListing.API.Controllers
 {
