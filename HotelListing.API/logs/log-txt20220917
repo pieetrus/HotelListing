@@ -1,0 +1,119 @@
+2022-09-17 11:53:46.587 +02:00 [INF] Now listening on: https://localhost:7158
+2022-09-17 11:53:46.638 +02:00 [INF] Now listening on: http://localhost:5158
+2022-09-17 11:53:46.646 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-17 11:53:46.647 +02:00 [INF] Hosting environment: Development
+2022-09-17 11:53:46.648 +02:00 [INF] Content root path: D:\Repo\HotelListing\HotelListing.API\
+2022-09-17 11:54:19.176 +02:00 [INF] Now listening on: https://localhost:7158
+2022-09-17 11:54:19.217 +02:00 [INF] Now listening on: http://localhost:5158
+2022-09-17 11:54:19.224 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-17 11:54:19.225 +02:00 [INF] Hosting environment: Development
+2022-09-17 11:54:19.236 +02:00 [INF] Content root path: D:\Repo\HotelListing\HotelListing.API\
+2022-09-17 11:55:13.825 +02:00 [WRN] User password validation failed: PasswordRequiresNonAlphanumeric;PasswordRequiresDigit;PasswordRequiresUpper.
+2022-09-17 11:55:28.433 +02:00 [INF] Login attempt for user@example.com
+2022-09-17 11:56:16.653 +02:00 [INF] Login attempt for jakub@example.com
+2022-09-17 11:56:17.213 +02:00 [ERR] Something went wrong in the /api/Account/login
+System.ArgumentOutOfRangeException: IDX10653: The encryption algorithm 'System.String' requires a key size of at least 'System.Int32' bits. Key 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey', is of size: 'System.Int32'. (Parameter 'key')
+   at Microsoft.IdentityModel.Tokens.SymmetricSignatureProvider..ctor(SecurityKey key, String algorithm, Boolean willCreateSignatures)
+   at Microsoft.IdentityModel.Tokens.CryptoProviderFactory.CreateSignatureProvider(SecurityKey key, String algorithm, Boolean willCreateSignatures, Boolean cacheProvider)
+   at Microsoft.IdentityModel.Tokens.CryptoProviderFactory.CreateForSigning(SecurityKey key, String algorithm, Boolean cacheProvider)
+   at Microsoft.IdentityModel.JsonWebTokens.JwtTokenUtilities.CreateEncodedSignature(String input, SigningCredentials signingCredentials)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.WriteToken(SecurityToken token)
+   at HotelListing.API.CoreRepository.AuthManager.GenerateToken() in D:\Repo\HotelListing\HotelListing.API.Core\Repository\AuthManager.cs:line 138
+   at HotelListing.API.CoreRepository.AuthManager.Login(LoginDto loginDto) in D:\Repo\HotelListing\HotelListing.API.Core\Repository\AuthManager.cs:line 100
+   at HotelListing.API.Controllers.AccountController.Login(LoginDto loginDto) in D:\Repo\HotelListing\HotelListing.API\Controllers\AccountController.cs:line 55
+   at lambda_method24(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Program.<>c.<<<Main>$>b__0_10>d.MoveNext() in D:\Repo\HotelListing\HotelListing.API\Program.cs:line 160
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware.Invoke(HttpContext httpContext)
+   at HotelListing.API.CoreMiddleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in D:\Repo\HotelListing\HotelListing.API.Core\Middleware\ExceptionMiddleware.cs:line 24
+2022-09-17 11:57:27.909 +02:00 [INF] Login attempt for jakub@example.com
+2022-09-17 11:57:34.721 +02:00 [ERR] Something went wrong in the /api/Account/login
+System.ArgumentOutOfRangeException: IDX10653: The encryption algorithm 'System.String' requires a key size of at least 'System.Int32' bits. Key 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey', is of size: 'System.Int32'. (Parameter 'key')
+   at Microsoft.IdentityModel.Tokens.SymmetricSignatureProvider..ctor(SecurityKey key, String algorithm, Boolean willCreateSignatures)
+   at Microsoft.IdentityModel.Tokens.CryptoProviderFactory.CreateSignatureProvider(SecurityKey key, String algorithm, Boolean willCreateSignatures, Boolean cacheProvider)
+   at Microsoft.IdentityModel.Tokens.CryptoProviderFactory.CreateForSigning(SecurityKey key, String algorithm, Boolean cacheProvider)
+   at Microsoft.IdentityModel.JsonWebTokens.JwtTokenUtilities.CreateEncodedSignature(String input, SigningCredentials signingCredentials)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.WriteToken(SecurityToken token)
+   at HotelListing.API.CoreRepository.AuthManager.GenerateToken() in D:\Repo\HotelListing\HotelListing.API.Core\Repository\AuthManager.cs:line 138
+   at HotelListing.API.CoreRepository.AuthManager.Login(LoginDto loginDto) in D:\Repo\HotelListing\HotelListing.API.Core\Repository\AuthManager.cs:line 100
+   at HotelListing.API.Controllers.AccountController.Login(LoginDto loginDto) in D:\Repo\HotelListing\HotelListing.API\Controllers\AccountController.cs:line 55
+   at lambda_method24(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Program.<>c.<<<Main>$>b__0_10>d.MoveNext() in D:\Repo\HotelListing\HotelListing.API\Program.cs:line 160
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware.Invoke(HttpContext httpContext)
+   at HotelListing.API.CoreMiddleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in D:\Repo\HotelListing\HotelListing.API.Core\Middleware\ExceptionMiddleware.cs:line 24
+2022-09-17 11:57:41.321 +02:00 [INF] Login attempt for jakub@example.com
+2022-09-17 11:58:01.917 +02:00 [ERR] Something went wrong in the /api/Account/login
+System.ArgumentOutOfRangeException: IDX10653: The encryption algorithm 'System.String' requires a key size of at least 'System.Int32' bits. Key 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey', is of size: 'System.Int32'. (Parameter 'key')
+   at Microsoft.IdentityModel.Tokens.SymmetricSignatureProvider..ctor(SecurityKey key, String algorithm, Boolean willCreateSignatures)
+   at Microsoft.IdentityModel.Tokens.CryptoProviderFactory.CreateSignatureProvider(SecurityKey key, String algorithm, Boolean willCreateSignatures, Boolean cacheProvider)
+   at Microsoft.IdentityModel.Tokens.CryptoProviderFactory.CreateForSigning(SecurityKey key, String algorithm, Boolean cacheProvider)
+   at Microsoft.IdentityModel.JsonWebTokens.JwtTokenUtilities.CreateEncodedSignature(String input, SigningCredentials signingCredentials)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.WriteToken(SecurityToken token)
+   at HotelListing.API.CoreRepository.AuthManager.GenerateToken() in D:\Repo\HotelListing\HotelListing.API.Core\Repository\AuthManager.cs:line 138
+   at HotelListing.API.CoreRepository.AuthManager.Login(LoginDto loginDto) in D:\Repo\HotelListing\HotelListing.API.Core\Repository\AuthManager.cs:line 100
+   at HotelListing.API.Controllers.AccountController.Login(LoginDto loginDto) in D:\Repo\HotelListing\HotelListing.API\Controllers\AccountController.cs:line 55
+   at lambda_method24(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Program.<>c.<<<Main>$>b__0_10>d.MoveNext() in D:\Repo\HotelListing\HotelListing.API\Program.cs:line 160
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware.Invoke(HttpContext httpContext)
+   at HotelListing.API.CoreMiddleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in D:\Repo\HotelListing\HotelListing.API.Core\Middleware\ExceptionMiddleware.cs:line 24
+2022-09-17 11:58:46.114 +02:00 [INF] Now listening on: https://localhost:7158
+2022-09-17 11:58:46.180 +02:00 [INF] Now listening on: http://localhost:5158
+2022-09-17 11:58:46.188 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-17 11:58:46.189 +02:00 [INF] Hosting environment: Development
+2022-09-17 11:58:46.191 +02:00 [INF] Content root path: D:\Repo\HotelListing\HotelListing.API\
+2022-09-17 11:58:58.733 +02:00 [INF] Login attempt for jakub@example.com
+2022-09-17 12:03:34.445 +02:00 [INF] Now listening on: https://localhost:7158
+2022-09-17 12:03:34.500 +02:00 [INF] Now listening on: http://localhost:5158
+2022-09-17 12:03:34.507 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-17 12:03:34.508 +02:00 [INF] Hosting environment: Development
+2022-09-17 12:03:34.509 +02:00 [INF] Content root path: D:\Repo\HotelListing\HotelListing.API\
+2022-09-17 12:04:27.287 +02:00 [INF] Now listening on: https://localhost:7158
+2022-09-17 12:04:27.341 +02:00 [INF] Now listening on: http://localhost:5158
+2022-09-17 12:04:27.348 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-17 12:04:27.349 +02:00 [INF] Hosting environment: Development
+2022-09-17 12:04:27.350 +02:00 [INF] Content root path: D:\Repo\HotelListing\HotelListing.API\
+2022-09-17 12:04:42.761 +02:00 [INF] Login attempt for jakub@example.com
+2022-09-17 12:07:08.161 +02:00 [INF] Now listening on: https://localhost:7158
+2022-09-17 12:07:08.224 +02:00 [INF] Now listening on: http://localhost:5158
+2022-09-17 12:07:08.233 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-17 12:07:08.234 +02:00 [INF] Hosting environment: Development
+2022-09-17 12:07:08.236 +02:00 [INF] Content root path: D:\Repo\HotelListing\HotelListing.API\
+2022-09-17 12:07:21.051 +02:00 [INF] Login attempt for jakub@example.com

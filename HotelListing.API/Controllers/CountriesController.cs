@@ -5,11 +5,13 @@ using Microsoft.AspNetCore.OData.Query;
 using HotelListing.API.CoreContracts;
 using HotelListing.API.CoreModels;
 using HotelListing.API.CoreModels.Country;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HotelListing.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class CountriesController : ControllerBase
     {
         private readonly IMapper _mapper;

@@ -1,0 +1,24 @@
+2022-09-16 17:05:25.037 +02:00 [INF] Now listening on: https://localhost:7158
+2022-09-16 17:05:25.097 +02:00 [INF] Now listening on: http://localhost:5158
+2022-09-16 17:05:25.106 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-16 17:05:25.109 +02:00 [INF] Hosting environment: Development
+2022-09-16 17:05:25.111 +02:00 [INF] Content root path: D:\Repo\HotelListing\HotelListing.API\
+2022-09-16 17:05:26.748 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "GET api/Countries" for actions - HotelListing.API.Controllers.CountriesController.GetCountries (HotelListing.API),HotelListing.API.Controllers.CountriesController.GetPagedCountries (HotelListing.API). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-09-16 17:05:43.768 +02:00 [INF] Now listening on: https://localhost:7158
+2022-09-16 17:05:43.838 +02:00 [INF] Now listening on: http://localhost:5158
+2022-09-16 17:05:43.847 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-16 17:05:43.849 +02:00 [INF] Hosting environment: Development
+2022-09-16 17:05:43.850 +02:00 [INF] Content root path: D:\Repo\HotelListing\HotelListing.API\
+2022-09-16 17:06:25.772 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2022-09-16 17:06:25.778 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2022-09-16 17:13:19.663 +02:00 [INF] Now listening on: https://localhost:7158
+2022-09-16 17:13:19.711 +02:00 [INF] Now listening on: http://localhost:5158
+2022-09-16 17:13:19.718 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-16 17:13:19.719 +02:00 [INF] Hosting environment: Development
+2022-09-16 17:13:19.720 +02:00 [INF] Content root path: D:\Repo\HotelListing\HotelListing.API\

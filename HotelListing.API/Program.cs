@@ -39,13 +39,13 @@ builder.Services.AddSwaggerGen(options =>
     });
     options.AddSecurityDefinition(JwtBearerDefaults.AuthenticationScheme, new OpenApiSecurityScheme
     {
-        Description = @"JWT Authorization header using theBearer scheme.
-                       Enter 'Bearer' [space] and then your token in the text input below
-                       Example 'Bearer 12345abcdef'",
+        Description = @"JWT Authorization header using the Bearer scheme.
+                       Enter token in the text input below",
         Name = "Authorization",
         In = ParameterLocation.Header,
-        Type = SecuritySchemeType.ApiKey,
-        Scheme = JwtBearerDefaults.AuthenticationScheme
+        Type = SecuritySchemeType.Http,
+        Scheme = JwtBearerDefaults.AuthenticationScheme,
+        BearerFormat = "JWT",
     });
 
     options.AddSecurityRequirement(new OpenApiSecurityRequirement
@@ -55,8 +55,8 @@ builder.Services.AddSwaggerGen(options =>
             {
                 Reference = new OpenApiReference
                 {
-                    Type = ReferenceType.SecurityScheme,
-                    Id = JwtBearerDefaults.AuthenticationScheme
+                    Id = JwtBearerDefaults.AuthenticationScheme,
+                    Type = ReferenceType.SecurityScheme
                 },
                 Scheme = "OAuth2",
                 Name = JwtBearerDefaults.AuthenticationScheme,
