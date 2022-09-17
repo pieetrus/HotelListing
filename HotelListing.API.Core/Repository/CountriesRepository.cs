@@ -5,6 +5,7 @@ using HotelListing.API.CoreExceptiions;
 using HotelListing.API.CoreModels.Country;
 using HotelListing.API.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Distributed;
 
 namespace HotelListing.API.CoreRepository
 {
@@ -13,7 +14,7 @@ namespace HotelListing.API.CoreRepository
         private readonly HotelListingDbContext _context;
         private readonly IMapper _mapper;
 
-        public CountriesRepository(HotelListingDbContext context, IMapper mapper) : base(context, mapper)
+        public CountriesRepository(HotelListingDbContext context, IMapper mapper, IDistributedCache cache) : base(context, mapper, cache)
         {
             _context = context;
             _mapper = mapper;

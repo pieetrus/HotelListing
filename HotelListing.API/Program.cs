@@ -1,3 +1,4 @@
+using System.Configuration;
 using System.Text;
 using HotelListing.API.CoreConfigurations;
 using HotelListing.API.CoreContracts;
@@ -30,6 +31,11 @@ builder.Services.AddIdentityCore<ApiUser>()
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    options.Configuration = builder.Configuration.GetConnectionString("Redis");
+    options.InstanceName = "HotelListingAPI_";
+});
 builder.Services.AddSwaggerGen(options =>
 {
     options.SwaggerDoc("v1", new OpenApiInfo
@@ -151,18 +157,18 @@ app.UseCors("AllowAll");
 
 app.UseResponseCaching();
 
-app.Use(async (context, next) =>
-{
-    context.Response.GetTypedHeaders().CacheControl =
-    new CacheControlHeaderValue()
-    {
-        Public = true,
-        MaxAge = TimeSpan.FromSeconds(10)
-    };
-    context.Response.Headers[HeaderNames.Vary] = new string[] { "Accept-Encoding" };
+//app.Use(async (context, next) =>
+//{
+//    context.Response.GetTypedHeaders().CacheControl =
+//    new CacheControlHeaderValue()
+//    {
+//        Public = true,
+//        MaxAge = TimeSpan.FromSeconds(10)
+//    };
+//    context.Response.Headers[HeaderNames.Vary] = new string[] { "Accept-Encoding" };
 
-    await next();
-});
+//    await next();
+//});
 
 
 app.UseAuthentication();
